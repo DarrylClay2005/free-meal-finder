@@ -41,3 +41,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Refresh on button click (its random its not going to be the same meal)
     refreshBtn.addEventListener('click', fetchAndDisplayMeal);
 });
+
