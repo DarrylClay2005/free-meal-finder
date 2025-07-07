@@ -26,6 +26,7 @@ h2 {
     text-align: center;
     margin: 16px 0;
 }
+/* this is for mobile devices DO NOT TOUCH */
 @media (max-width: 600px) {
     body {
         padding: 8px;
@@ -43,5 +44,25 @@ h2 {
     img {
         max-width: 100%;
         height: auto;
+    }
+}
+
+p {
+    border: 1.5px solid #6666cc;
+    padding: 12px 18px;
+    margin: 16px 0;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    background: #f7f9fc;
+    box-sizing: border-box;
+    max-width: 600px;
+}
+
+@media (max-width: 600px) { (i forgot to add this earlier)
+    p {
+        font-size: 1rem;
+        padding: 8px 10px;
+        margin: 8px 0;
+        max-width: 100%;
     }
 }
