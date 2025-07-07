@@ -25,3 +25,19 @@ function displayMeal(meal) {
         </div>
      : '<p>No meal found.</p>';
 }
+
+// Display multiple meals (Add a search bar to search for meals by name otherwise this gonna be looking real stupid)
+function displayMeals(meals) {
+    const container = document.getElementById('meals');
+    if (!meals) {
+        container.innerHTML = '<p>No meals found.</p>';
+        return;
+    }
+    container.innerHTML = meals.map(meal => 
+        <div class="meal">
+            <h2>${meal.strMeal}</h2>
+            <img src="${meal.strMealThumb}" alt="${meal.strMeal}" width="200"/>
+            <p>${meal.strInstructions.substring(0, 200)}...</p>
+        </div>
+    ).join('');
+}
