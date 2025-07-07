@@ -45,11 +45,13 @@ function displayMeals(meals) {
 // Set up search bar and event listeners (Also make sure the images are working properly, if not then try to use a different image source)
 function setup() {
     const searchForm = document.createElement('form');
-    searchForm.innerHTML = 
-        <input type="text" id="searchInput" placeholder="Search for a meal..." />
-        <button type="submit">Search</button>
-        <button type="button" id="randomBtn">Random Meal</button>
-    ;
+    searchForm.innerHTML = `
+        <div>
+            <input type="text" id="searchInput" placeholder="Search for a meal..." />
+            <button type="submit">Search</button>
+            <button type="button" id="randomBtn">Random Meal</button>
+        </div>
+    `;
     document.body.prepend(searchForm);
 
     const mealsDiv = document.createElement('div');
