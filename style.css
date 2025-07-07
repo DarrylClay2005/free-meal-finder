@@ -1,0 +1,8 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid blue;
+    padding: 16px;
+    margin: 20px 0;
+}
