@@ -82,3 +82,4 @@ function fetchAllMeals() {
 
 // Call the function to fetch and display all meals
 fetchAllMeals();
+
