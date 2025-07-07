@@ -6,7 +6,6 @@ Welcome to the Meal Finder project! This web application allows users to explore
 
 - Browse a list of all available meals.
 - Responsive design using Tailwind CSS.
-- Easy to extend and customize.
 
 ## Project Structure
 
