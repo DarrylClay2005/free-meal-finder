@@ -67,3 +67,13 @@ p {
     }
 }
 
+h2 { /* This is for the h2 tag */
+    font-weight: bold;
+    font-size: large;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
