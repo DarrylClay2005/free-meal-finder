@@ -1,9 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Create and add the refresh button
-    const refreshBtn = document.createElement('button');
-    refreshBtn.textContent = 'Get New Meal';
-    document.body.appendChild(refreshBtn);
-
     // Container for meal content
     const mealContainer = document.createElement('div');
     mealContainer.style.transition = 'opacity 0.5s';
@@ -14,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fade out
         mealContainer.style.opacity = 0;
 
-        // Wait for fade out to finish before fetching and updating content (THIS IS VERY IMPORTANT OTHERWISE THIS GONNA BE LOOKING REAL MESSED UP)
         setTimeout(() => {
             fetch('https://www.themealdb.com/api/json/v1/1/random.php')
                 .then(response => response.json())
@@ -22,24 +16,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     const meal = data.meals[0];
                     mealContainer.innerHTML = `
                         <h2>${meal.strMeal}</h2>
-                        <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+                        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" style="cursor:pointer;">
                         <p>${meal.strInstructions}</p>
                     `;
-                    // Fade in (after content is updated. Again, i might change this later)
+                    // Add click event to image for refresh
+                    const img = mealContainer.querySelector('img');
+                    if (img) {
+                        img.addEventListener('click', fetchAndDisplayMeal);
+                    }
                     mealContainer.style.opacity = 1;
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
-                    mealContainer.style.opacity = 1; // Ensure fade in on error
+                    mealContainer.style.opacity = 1;
                 });
-        }, 500); // Match the transition duration
+        }, 500);
     }
 
     // Initial fetch from the api
     fetchAndDisplayMeal();
-
-    // Refresh on button click (its random its not going to be the same meal)
-    refreshBtn.addEventListener('click', fetchAndDisplayMeal);
 });
 
 function fetchAllMeals() {
@@ -83,3 +78,10 @@ function fetchAllMeals() {
 // Call the function to fetch and display all meals
 fetchAllMeals();
 
+const audio = document.createElement('audio');
+audio.src = 'Shop Channel - Nintendo Wii Music Collection.mp3';
+audio.loop = true;
+audio.autoplay = true;
+audio.volume = 0.2; // Set volume to 20%
+audio.style.display = 'none';
+document.body.appendChild(audio);
