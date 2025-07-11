@@ -77,11 +77,3 @@ function fetchAllMeals() {
 
 // Call the function to fetch and display all meals
 fetchAllMeals();
-
-const audio = document.createElement('audio');
-audio.src = 'Shop Channel - Nintendo Wii Music Collection.mp3';
-audio.loop = true;
-audio.autoplay = true;
-audio.volume = 0.2; // Set volume to 20%
-audio.style.display = 'none';
-document.body.appendChild(audio);
