@@ -37,7 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchAndDisplayMeal();
 });
 
-function fetchAllMeals() {
+function fetchAllMeals() { /*This function fetches all meals from TheMealDB API, processes the response to extract meal names, images, 
+    and instructions, logs these arrays to the console, and dynamically renders all meals (with their name, image, and instructions) 
+    to the web page. If no meals are found or an error occurs, it logs a message to the console. */
+    // Fetch all meals from TheMealDB API (This the short version of the note)
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
         .then(response => response.json())
         .then(data => {
